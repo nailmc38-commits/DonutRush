@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0b0b0e">
+  <meta name="description" content="DonutRush — a free Minecraft-inspired arcade with Mines Puzzle, Coin Toss, and a skill-based leaderboard. No stakes, all fun.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/style.css">
+  <title>DonutRush — The Arcade Is Open</title>
+</head>
+<body>
+  <div class="glow glow-one" aria-hidden="true"></div><div class="glow glow-two" aria-hidden="true"></div>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#home" aria-label="DonutRush home"><span class="donut-mark" aria-hidden="true"><span class="donut-hole"></span></span><span>DONUT<span class="brand-accent">RUSH</span></span></a>
+      <nav class="nav" aria-label="Main navigation">
+        <a class="nav-link current" href="#home">Home</a><a class="nav-link" href="#arcade">Arcade</a><a class="nav-link" href="#rankings">Leaderboard</a><a class="nav-link" href="#how">How it works</a>
+      </nav>
+      <div class="nav-actions"><span class="live-pill"><span class="live-dot"></span> FREE-TO-PLAY</span><button id="authButton" class="btn btn-small btn-outline" type="button">Sign in <span aria-hidden="true">↗</span></button><button id="profileButton" class="btn btn-small btn-profile hidden" type="button"></button></div>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="hero-text">
+          <div class="eyebrow"><span class="sparkle">✦</span> THE ARCADE IS OPEN <span class="eyebrow-line"></span> SEASON 01</div>
+          <h1>YOUR NEXT<br><span class="gradient-text">BIG RUSH.</span></h1>
+          <p class="hero-description">Minecraft-inspired arcade energy. Crack the puzzle, test your luck for fun, and climb a leaderboard built on skill.</p>
+          <div class="hero-buttons"><a class="btn btn-primary" href="#arcade">ENTER THE ARCADE <span aria-hidden="true">↗</span></a><a class="btn btn-light" href="#rankings">VIEW LEADERBOARD <span aria-hidden="true">→</span></a></div>
+          <div class="hero-metrics"><div><strong>100% FREE</strong><span>Zero purchases</span></div><div class="metric-separator"></div><div><strong>SKILL POINTS</strong><span>Earned in puzzles</span></div><div class="metric-separator"></div><div><strong>NO WAGERS</strong><span>Play just for fun</span></div></div>
+        </div>
+        <div class="hero-art" aria-hidden="true"><div class="art-ring ring-outer"></div><div class="art-ring ring-mid"></div><div class="art-ring ring-inner"></div><div class="big-donut"><div class="donut-icing"></div><div class="sprinkle s1"></div><div class="sprinkle s2"></div><div class="sprinkle s3"></div><div class="sprinkle s4"></div><div class="sprinkle s5"></div><div class="sprinkle s6"></div><div class="sprinkle s7"></div><div class="sprinkle s8"></div><div class="donut-center"></div></div><div class="floating-card floating-win">✦ <span>LEVEL UP!</span></div><div class="floating-card floating-star">★ <span>PLAY FOR FUN</span></div><span class="shine shine1">✧</span><span class="shine shine2">✦</span><span class="shine shine3">✧</span></div>
+      </section>
+
+      <section class="marquee" aria-label="Features"><div class="marquee-inner">PLAY SMART <span>✶</span> STAY SHARP <span>✶</span> NO PURCHASES <span>✶</span> EARN SKILL POINTS <span>✶</span> PLAY SMART <span>✶</span> STAY SHARP <span>✶</span></div></section>
+
+      <section class="section arcade-section" id="arcade">
+        <div class="section-heading"><div><div class="section-kicker">// SELECT YOUR GAME</div><h2>THE <span>ARCADE</span></h2></div><div class="section-meta"><span class="status-dot"></span> TWO GAMES AVAILABLE</div></div>
+        <div class="game-cards">
+          <button type="button" class="game-card mine-card active" data-game="mines"><span class="card-top"><span class="type-label">01 / SKILL GAME</span><span class="arrow-circle">↗</span></span><div class="game-art mine-art" aria-hidden="true"><div class="gem gem-a">◆</div><div class="gem gem-b">◆</div><div class="gem gem-c">◆</div><div class="mine-art-bomb">✹</div></div><div class="card-copy"><div class="game-title">MINES <span>PUZZLE</span></div><p>Find safe tiles. Read the numbers. Outthink the board.</p><span class="game-chip">🏆 EARNS SKILL POINTS</span></div></button>
+          <button type="button" class="game-card coin-card" data-game="coin"><span class="card-top"><span class="type-label">02 / JUST FOR FUN</span><span class="arrow-circle">↗</span></span><div class="game-art coin-art" aria-hidden="true"><div class="coin-preview"><span>DR</span></div><div class="coin-sparkle">✦</div></div><div class="card-copy"><div class="game-title">COIN <span>TOSS</span></div><p>Heads or tails? Take a guess. No stakes attached.</p><span class="game-chip">✦ NO BETS OR PRIZES</span></div></button>
+          <div class="game-card coming-card"><span class="card-top"><span class="type-label">03 / IN THE WORKS</span><span class="arrow-circle subdued">✦</span></span><div class="game-art coming-art" aria-hidden="true"><span>⚡</span><span class="coming-grid"></span></div><div class="card-copy"><div class="game-title">MORE <span>SOON</span></div><p>New skill challenges are on the way. Keep leveling up.</p><span class="game-chip muted">COMING SOON</span></div></div>
+        </div>
+        <div class="game-panel" id="gamePanel" aria-live="polite">
+          <div id="minesPanel">
+            <div class="panel-header"><div><span class="panel-kicker">NOW PLAYING / 01</span><h3>MINES <span>PUZZLE</span></h3><p>Numbers tell you how many neighboring tiles contain mines. Right-click a tile to flag it.</p></div><div class="panel-tag"><span class="status-dot"></span> SKILL MODE</div></div>
+            <div class="mines-controls"><label for="difficulty">DIFFICULTY</label><select id="difficulty"><option value="easy">Easy · 5×5 · +100 pts</option><option value="medium">Medium · 6×6 · +200 pts</option><option value="hard">Hard · 8×8 · +400 pts</option></select><button class="btn btn-primary" id="newMines" type="button">NEW BOARD ↗</button><button class="btn btn-ghost" id="flagMode" type="button" aria-pressed="false">⚑ FLAG MODE: OFF</button></div>
+            <div class="mines-game"><div class="board-wrapper"><div class="mines-hud"><div><span>MINES</span><strong id="minesRemaining">04</strong></div><div class="face-icon" id="minesFace">◡</div><div class="hud-right"><span>SAFE TILES</span><strong id="minesSafe">0 / 21</strong></div></div><div class="mines-board" id="minesBoard" aria-label="Mines puzzle board"></div><p class="board-tip">TIP: The first tile you reveal is always safe. On mobile, turn on Flag Mode to mark a mine.</p></div><aside class="game-side"><div class="guide-badge">HOW TO PLAY</div><h4>Think before<br>you tap.</h4><div class="guide-list"><div><span class="step-num">01</span><p>Reveal a tile to see how many mines touch it.</p></div><div><span class="step-num">02</span><p>Use the clues to uncover safe tiles. Flag suspected mines.</p></div><div><span class="step-num">03</span><p>Reveal every safe tile to win skill points.</p></div></div><div class="result-area" id="minesResult">Start a new board to play!</div><div class="side-notice">🔒 Mines stay hidden until the game ends. No betting, no purchases.</div></aside></div>
+          </div>
+          <div id="coinPanel" class="hidden">
+            <div class="panel-header"><div><span class="panel-kicker">NOW PLAYING / 02</span><h3>COIN <span>TOSS</span></h3><p>Make a prediction, flip the coin, and see what happens. No points or rewards are involved.</p></div><div class="panel-tag"><span class="status-dot"></span> JUST FOR FUN</div></div>
+            <div class="coin-game"><div class="coin-stage"><div id="animatedCoin" class="coin-3d"><div class="coin-side coin-front">DR</div><div class="coin-side coin-back">★</div></div><div id="coinStatus" class="coin-status">PICK A SIDE TO START</div></div><div class="coin-controls"><div class="section-kicker">// YOUR PREDICTION</div><h4>Call it in the air.</h4><div class="coin-buttons"><button type="button" class="btn btn-primary" id="flipHeads">HEADS ↗</button><button type="button" class="btn btn-outline" id="flipTails">TAILS ↗</button></div><p class="coin-disclaimer">Just a coin toss — no wagers, no prizes, no points awarded.</p><div class="coin-counter"><span>TOSSES MADE</span><strong id="coinFlips">0</strong></div><div class="coin-counter"><span>CORRECT GUESSES</span><strong id="coinCorrect">0</strong></div></div></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section leaderboard-section" id="rankings"><div class="section-heading"><div><div class="section-kicker">// THE SCOREBOARD</div><h2>TOP <span>PLAYERS</span></h2></div><div class="section-meta"><span class="status-dot"></span> PUZZLE POINTS ONLY</div></div><div class="leaderboard-box"><div class="leaderboard-head"><span>RANK / PLAYER</span><span>MINES WINS</span><span>SKILL POINTS</span></div><div id="leaderboardRows" class="leaderboard-rows"><div class="empty-leaderboard">Loading leaderboard...</div></div><div class="leaderboard-bottom"><span>Only skill-based puzzle wins count toward rankings.</span><span id="totalPlayers">0 PLAYERS REGISTERED</span></div></div></section>
+
+      <section class="section how-section" id="how"><div class="section-heading"><div><div class="section-kicker">// THE DONUTRUSH WAY</div><h2>PLAY FREE. <span>STAY LEGENDARY.</span></h2></div></div><div class="how-grid"><article><span>01</span><div class="how-icon">⌘</div><h3>Create a profile</h3><p>Pick a DonutRush username and password. You can add your public Minecraft name, but never your Minecraft password.</p></article><article><span>02</span><div class="how-icon">◆</div><h3>Beat puzzles</h3><p>Clear Mines Puzzle boards using logic to earn skill points. No stakes, deposits, or luck-based points.</p></article><article><span>03</span><div class="how-icon">★</div><h3>Climb the ranks</h3><p>Earn a spot on the leaderboard. Points have no cash, item, or Minecraft-currency value and cannot be transferred.</p></article></div></section>
+    </main>
+    <footer><div class="footer-top"><a class="brand" href="#home"><span class="donut-mark" aria-hidden="true"><span class="donut-hole"></span></span><span>DONUT<span class="brand-accent">RUSH</span></span></a><span>BUILT FOR THE GAME. NOT FOR THE GAMBLE.</span></div><div class="footer-bottom"><span>© 2026 DONUTRUSH · ORIGINAL FAN-MADE ARCADE</span><span>NOT AFFILIATED WITH MOJANG OR DONUTSMP · NO REAL OR TRADABLE CURRENCY</span></div></footer>
+  </div>
+  <dialog id="accountDialog" class="account-dialog"><button type="button" class="dialog-close" id="closeDialog" aria-label="Close">✕</button><div class="dialog-brand"><span class="donut-mark" aria-hidden="true"><span class="donut-hole"></span></span><span>DONUT<span>RUSH</span></span></div><div id="authForm"><div class="tabs"><button id="loginTab" class="tab active" type="button">LOG IN</button><button id="registerTab" class="tab" type="button">SIGN UP</button></div><h3 id="authTitle">Welcome back.</h3><p class="dialog-subtitle">Your rush starts here.</p><form id="signForm"><label>DONUTRUSH USERNAME <input name="username" autocomplete="username" minlength="3" maxlength="20" pattern="[a-zA-Z0-9_]+" required placeholder="Secret_gamer38"></label><label>DONUTRUSH PASSWORD <input name="password" type="password" autocomplete="current-password" minlength="8" maxlength="128" required placeholder="At least 8 characters"></label><p class="password-warning">Use a new password for this site, not your Minecraft password.</p><p id="authError" role="alert" class="form-error hidden"></p><button class="btn btn-primary btn-full" id="submitAuth" type="submit">LOG IN ↗</button></form></div><div id="profileForm" class="hidden"><h3 id="profileHeading">Your player card.</h3><div class="profile-stats"><div>SKILL POINTS<strong id="profilePoints">0</strong></div><div>PUZZLE WINS<strong id="profileWins">0</strong></div></div><form id="saveProfile"><label>MINECRAFT DISPLAY NAME (OPTIONAL)<input id="mcName" name="minecraftName" maxlength="16" placeholder="Your Java username"></label><label class="toggle-line"><input id="publicRank" type="checkbox" checked><span>Show my profile on the leaderboard</span></label><p class="password-warning">This is a display name only. Never enter your Minecraft login password.</p><p id="profileError" class="form-error hidden" role="alert"></p><button type="submit" class="btn btn-primary btn-full">SAVE PROFILE ↗</button></form><button type="button" id="logoutButton" class="btn btn-full btn-outline logout-button">LOG OUT</button></div></dialog>
+  <div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
+  <script type="module" src="/app.js"></script>
+</body>
+</html>
